@@ -1,11 +1,13 @@
 plugins {
     `java-library`
+    id("maven-publish")
 }
 
 group = "me.jakepronger.spine"
 version = "1.0.0"
 
 repositories {
+    mavenCentral()
     maven {
         name = "papermc"
         url = uri("https://repo.papermc.io/repository/maven-public/")
