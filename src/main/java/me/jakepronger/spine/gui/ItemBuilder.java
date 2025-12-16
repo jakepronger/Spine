@@ -36,7 +36,7 @@ public class ItemBuilder {
 
     public ItemBuilder lore(String... lore) {
         ItemMeta meta = item.getItemMeta();
-        meta.lore(Arrays.stream(lore).toList()); // todo: formatting etc proper add
+        //meta.lore(Arrays.stream(lore).toList()); // todo: formatting etc proper add
         item.setItemMeta(meta);
         return this;
     }
