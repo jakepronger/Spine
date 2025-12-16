@@ -2,7 +2,7 @@ package me.jakepronger.spine;
 
 import lombok.Getter;
 import me.jakepronger.spine.interfaces.Dispatcher;
-import me.jakepronger.spine.logging.LoggerHelper;
+import me.jakepronger.spine.helpers.LoggerHelper;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Spine {

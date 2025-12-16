@@ -1,4 +1,4 @@
-package me.jakepronger.spine.logging;
+package me.jakepronger.spine.helpers;
 
 import org.bukkit.plugin.java.JavaPlugin;
 

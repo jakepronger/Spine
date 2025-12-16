@@ -30,7 +30,7 @@ public class GUI {
                 Component.text(title)
         );
         this.dispatcher = dispatcher;
-        registerListener();
+        //registerListener();
     }
 
     // Internal listener for clicks and closes

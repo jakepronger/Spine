@@ -2,6 +2,7 @@ package me.jakepronger.spine.gui;
 
 import lombok.Getter;
 import lombok.experimental.Accessors;
+import net.kyori.adventure.text.Component;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
@@ -28,14 +29,14 @@ public class ItemBuilder {
     public ItemBuilder name(String name) {
         // todo formatting
         ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName(name); // todo: deprecated
+        meta.displayName(Component.text(name));
         item.setItemMeta(meta);
         return this;
     }
 
     public ItemBuilder lore(String... lore) {
         ItemMeta meta = item.getItemMeta();
-        meta.setLore(Arrays.stream(lore).toList()); // todo: formatting etc proper add
+        meta.lore(Arrays.stream(lore).toList()); // todo: formatting etc proper add
         item.setItemMeta(meta);
         return this;
     }
@@ -47,11 +48,19 @@ public class ItemBuilder {
         return this;
     }
 
-    public ItemBuilder enchant(Enchantment enchantment, int level) {
+    public ItemBuilder enchant(Enchantment enchantment, int level, boolean ignoreLevelRestriction) {
+        ItemMeta meta = item.getItemMeta();
+        meta.addEnchant(enchantment, level, ignoreLevelRestriction);
+        item.setItemMeta(meta);
         return this;
     }
 
-    public ItemBuilder glow(boolean glow) {
+    public ItemBuilder glow(boolean value) {
+        ItemMeta meta = item.getItemMeta();
+        if (value)
+            meta.setEnchantmentGlintOverride(true);
+        else
+            meta.setEnchantmentGlintOverride(null);
         return this;
     }
 
