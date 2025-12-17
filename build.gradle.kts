@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "me.jakepronger.spine"
-version = "1.0.1"
+version = "1.0.3"
 
 repositories {
     mavenCentral()
@@ -42,7 +42,7 @@ afterEvaluate {
 
                 groupId = "com.github.jakepronger"
                 artifactId = "Spine"
-                version = "1.0.1"
+                version = "1.0.3"
             }
         }
     }
