@@ -28,7 +28,7 @@ public class Spine {
 
     public Spine(JavaPlugin plugin) {
         Spine.plugin = plugin;
-        dispatcher = new Dispatcher(plugin);
+        dispatcher = new Dispatcher().;
         logger = new LoggerHelper(plugin);
     }
 
