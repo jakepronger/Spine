@@ -18,16 +18,15 @@ public class Spine {
     // GUI, Creating, Listeners
 
     @Getter
-    private static JavaPlugin plugin;
+    private static LoggerHelper logger;
 
     @Getter
     private final Dispatcher dispatcher;
 
-    @Getter
-    private static LoggerHelper logger;
+    private final JavaPlugin plugin;
 
     public Spine(JavaPlugin plugin) {
-        Spine.plugin = plugin;
+        this.plugin = plugin;
         dispatcher = new Dispatcher(plugin);
         logger = new LoggerHelper(plugin);
     }
