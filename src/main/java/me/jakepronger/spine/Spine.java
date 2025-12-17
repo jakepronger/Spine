@@ -21,15 +21,15 @@ public class Spine {
     private static JavaPlugin plugin;
 
     @Getter
-    public final Dispatcher dispatcher;
+    private final Dispatcher dispatcher;
 
     @Getter
-    public static LoggerHelper log;
+    private static LoggerHelper logger;
 
     public Spine(JavaPlugin plugin) {
         Spine.plugin = plugin;
         dispatcher = new Dispatcher(plugin);
-        log = new LoggerHelper(plugin);
+        logger = new LoggerHelper(plugin);
     }
 
 }
