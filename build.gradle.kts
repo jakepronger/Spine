@@ -7,7 +7,11 @@ plugins {
 }
 
 group = "me.jakepronger.spine"
-version = "1.0.3"
+version = "1.0.4"
+
+val artifactId = "Spine"
+val gitGroup = "com.github.jakepronger"
+val sVersion = version.toString()
 
 repositories {
     mavenCentral()
@@ -40,9 +44,9 @@ afterEvaluate {
                 // Now that the plugin is 'com.gradleup.shadow', this component should be found
                 from(components["shadow"])
 
-                groupId = "com.github.jakepronger"
-                artifactId = "Spine"
-                version = "1.0.3"
+                groupId = gitGroup
+                artifactId = artifactId
+                version = sVersion
             }
         }
     }
