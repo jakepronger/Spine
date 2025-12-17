@@ -1,12 +1,11 @@
 package me.jakepronger.spine.config;
 
+import me.jakepronger.spine.Spine;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import javax.annotation.Nullable;
 import java.util.HashMap;
-
-import static me.jakepronger.spine.Spine.log;
 
 public class ConfigManager {
 
@@ -65,7 +64,7 @@ public class ConfigManager {
             return type.cast(value);
         }
 
-        log.warn("&cError getting string using path: " + path);
+        Spine.getLogger().warn("&cError getting string using path: " + path);
         return null;
     }
 

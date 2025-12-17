@@ -1,5 +1,7 @@
 package me.jakepronger.spine.helpers;
 
+import me.jakepronger.spine.Spine;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -9,8 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.jar.JarEntry;
 import java.util.jar.JarInputStream;
-
-import static me.jakepronger.spine.Spine.log;
 
 public class PackageScanner {
 
@@ -41,7 +41,7 @@ public class PackageScanner {
                 classList.add(clazz);
             }
         } catch (URISyntaxException | IOException | ClassNotFoundException exception) {
-            log.error("Failed to scan package " + pkg + ": " + exception.getMessage());
+            Spine.getLogger().error("Failed to scan package " + pkg + ": " + exception.getMessage());
         }
 
         return classList;
