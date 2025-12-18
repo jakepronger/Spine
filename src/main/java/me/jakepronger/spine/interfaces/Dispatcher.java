@@ -8,6 +8,7 @@ import org.bukkit.event.Event;
 import org.bukkit.event.EventPriority;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import javax.annotation.Nullable;
 import java.util.function.Consumer;
 
 public class Dispatcher {
@@ -20,18 +21,24 @@ public class Dispatcher {
         this.events = new EventDispatcher(plugin);
     }
 
-    public void register(
-            String name,
-            Consumer<CommandSourceStack> action,
-            String description,
-            Permission permission
-    ) {
-        commands.command(
-                name,
-                action,
-                description,
-                permission
-        );
+    // Master Method
+    public void command(String name, Consumer<CommandSourceStack> action, @Nullable String description, @Nullable Permission permission, @Nullable String... aliases) {
+        commands.command(name, action, description, permission, aliases);
+    }
+
+    // Overload: No Aliases
+    public void command(String name, Consumer<CommandSourceStack> action, @Nullable String description, @Nullable Permission permission) {
+        command(name, action, description, permission, null);
+    }
+
+    // Overload: Public Command (No Permission)
+    public void command(String name, Consumer<CommandSourceStack> action, String description) {
+        command(name, action, description, Permission.DEFAULT);
+    }
+
+    // Overload: Minimal
+    public void command(String name, Consumer<CommandSourceStack> action) {
+        command(name, action, "");
     }
 
     public <T extends Event> void event(

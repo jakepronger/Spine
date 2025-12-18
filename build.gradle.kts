@@ -1,9 +1,6 @@
-import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
-
 plugins {
     `java-library`
     `maven-publish`
-    id("com.gradleup.shadow") version "8.3.5"
 }
 
 group = "me.jakepronger.spine"
@@ -32,17 +29,11 @@ java {
     toolchain.languageVersion.set(JavaLanguageVersion.of(25))
 }
 
-// Modern Gradle 9 approach to configure the task
-tasks.named<ShadowJar>("shadowJar") {
-    archiveClassifier.set("")
-}
-
 afterEvaluate {
     publishing {
         publications {
             register<MavenPublication>("maven") {
-                // Now that the plugin is 'com.gradleup.shadow', this component should be found
-                from(components["shadow"])
+                from(components["java"])
 
                 groupId = gitGroup
                 artifactId = artifactId

@@ -5,8 +5,8 @@ import org.bukkit.entity.Player;
 
 public enum Permission {
 
-    DEFAULT(null),
-    STAFF("group.staff"),
+    DEFAULT(""),
+    MOD("group.mod"),
     ADMIN("group.admin");
 
     private final String permissionNode;
@@ -17,15 +17,13 @@ public enum Permission {
 
     public boolean has(CommandSourceStack source) {
 
-        // Console always allowed
-        if (!(source.getExecutor() instanceof Player player)) {
-            return true;
-        }
-
         // DEFAULT = no permission required
-        if (permissionNode == null) {
+        if (permissionNode.isEmpty())
             return true;
-        }
+
+        // Console always allowed
+        if (!(source.getExecutor() instanceof Player player))
+            return true;
 
         // ADMIN special-case: op OR permission
         if (this == ADMIN) {
