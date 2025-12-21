@@ -1,7 +1,7 @@
 package me.jakepronger.spine;
 
 import lombok.Getter;
-import me.jakepronger.spine.interfaces.Dispatcher;
+import me.jakepronger.spine.managers.RegistryManager;
 import me.jakepronger.spine.helpers.LoggerHelper;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -21,13 +21,13 @@ public class Spine {
     private static LoggerHelper logger;
 
     @Getter
-    private final Dispatcher dispatcher;
+    private final RegistryManager dispatcher;
 
     private final JavaPlugin plugin;
 
     public Spine(JavaPlugin plugin) {
         this.plugin = plugin;
-        dispatcher = new Dispatcher(plugin);
+        dispatcher = new RegistryManager(plugin);
         logger = new LoggerHelper(plugin);
     }
 

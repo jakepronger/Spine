@@ -1,6 +1,6 @@
-package me.jakepronger.spine.gui;
+package me.jakepronger.spine.builders;
 
-import me.jakepronger.spine.interfaces.Dispatcher;
+import me.jakepronger.spine.managers.RegistryManager;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.event.inventory.InventoryClickEvent;
@@ -11,17 +11,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
 
-public class GUI {
+public class GUIBuilder {
 
     private final String title;
     private final int rows;
     private final Inventory inventory;
 
-    private final Dispatcher dispatcher;
+    private final RegistryManager dispatcher;
 
     private final Map<Integer, Consumer<InventoryClickEvent>> clickHandlers = new HashMap<>();
 
-    public GUI(Dispatcher dispatcher, String title, int rows) {
+    public GUIBuilder(RegistryManager dispatcher, String title, int rows) {
         this.title = title;
         this.rows = rows;
         this.inventory = Bukkit.createInventory(

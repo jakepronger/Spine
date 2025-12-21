@@ -1,10 +1,10 @@
-package me.jakepronger.spine.config;
+package me.jakepronger.spine.managers;
 
 import me.jakepronger.spine.Spine;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.jetbrains.annotations.Nullable;
 
-import javax.annotation.Nullable;
 import java.util.HashMap;
 
 public class ConfigManager {
@@ -26,6 +26,7 @@ public class ConfigManager {
     /**
      * Loads config.yml and variables into memory
      */
+    @Deprecated // not required.. it's stored in memory in fileconfiguration type
     private void load() {
 
         plugin.saveDefaultConfig();

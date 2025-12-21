@@ -1,4 +1,4 @@
-package me.jakepronger.spine.dispatcher;
+package me.jakepronger.spine.registers;
 
 import org.bukkit.Bukkit;
 import org.bukkit.event.Event;
@@ -8,11 +8,11 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.function.Consumer;
 
-public class EventDispatcher {
+public class EventRegister {
 
     private final JavaPlugin plugin;
 
-    public EventDispatcher(JavaPlugin plugin) {
+    public EventRegister(JavaPlugin plugin) {
         this.plugin = plugin;
     }
 
@@ -20,13 +20,13 @@ public class EventDispatcher {
             Class<T> eventClass,
             EventPriority priority,
             boolean ignoreCancelled,
-            Consumer<T> handler
+            Consumer<T> action
     ) {
         Bukkit.getPluginManager().registerEvent(
                 eventClass,
                 new Listener() {},
                 priority,
-                (listener, event) -> handler.accept(eventClass.cast(event)),
+                (listener, event) -> action.accept(eventClass.cast(event)),
                 plugin,
                 ignoreCancelled
         );
