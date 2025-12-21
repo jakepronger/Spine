@@ -53,12 +53,20 @@ public class ItemStackBuilder {
         return this;
     }
 
+    public ItemStackBuilder glow() {
+        ItemMeta meta = item.getItemMeta();
+        meta.setEnchantmentGlintOverride(true);
+        item.setItemMeta(meta);
+        return this;
+    }
+
     public ItemStackBuilder glow(boolean value) {
         ItemMeta meta = item.getItemMeta();
         if (value)
             meta.setEnchantmentGlintOverride(true);
         else
             meta.setEnchantmentGlintOverride(null);
+        item.setItemMeta(meta);
         return this;
     }
 

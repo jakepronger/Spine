@@ -21,13 +21,13 @@ public class Spine {
     private static LoggerHelper logger;
 
     @Getter
-    private final RegistryManager dispatcher;
+    private final RegistryManager register;
 
     private final JavaPlugin plugin;
 
     public Spine(JavaPlugin plugin) {
         this.plugin = plugin;
-        dispatcher = new RegistryManager(plugin);
+        register = new RegistryManager(plugin);
         logger = new LoggerHelper(plugin);
     }
 
