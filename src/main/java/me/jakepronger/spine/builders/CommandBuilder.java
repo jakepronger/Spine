@@ -24,7 +24,8 @@ public class CommandBuilder {
     private Permission permission;
     private String[] aliases;
 
-    // todo: tab completion system
+    // todo: tab completion system (preexisting selections PLAYER, INTEGER(range check))
+    // todo: sub commands
 
     public CommandBuilder(CommandRegister register, String name, Consumer<CommandSourceStack> action) {
         this.register = register;
