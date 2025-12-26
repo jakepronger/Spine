@@ -6,6 +6,7 @@ import org.bukkit.entity.Player;
 public enum Permission {
 
     DEFAULT(""),
+    DONATOR("group.donator"),
     MOD("group.mod"),
     ADMIN("group.admin");
 
