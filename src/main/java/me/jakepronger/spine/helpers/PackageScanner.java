@@ -1,6 +1,7 @@
 package me.jakepronger.spine.helpers;
 
 import me.jakepronger.spine.Spine;
+import org.bukkit.Bukkit;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -13,6 +14,8 @@ import java.util.jar.JarEntry;
 import java.util.jar.JarInputStream;
 
 public class PackageScanner {
+
+    // todo: fix structuring so we can log errors in this method?
 
     public static List<Class<?>> scanPackage(String pkg) {
         List<Class<?>> classList = new ArrayList<>();
@@ -41,7 +44,7 @@ public class PackageScanner {
                 classList.add(clazz);
             }
         } catch (URISyntaxException | IOException | ClassNotFoundException exception) {
-            Spine.getLogger().error("Failed to scan package " + pkg + ": " + exception.getMessage());
+            //Bukkit.getConsoleSender().sendMessage("Failed to scan package " + pkg + ": " + exception.getMessage());
         }
 
         return classList;
