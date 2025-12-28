@@ -16,19 +16,19 @@ public class Spine {
     // Tasks? Math? Location
 
     @Getter
-    private final RegistryManager register;
+    private final RegistryManager registry;
 
     @Getter
     private final ConfigManager config;
 
     public Spine(JavaPlugin plugin) {
-        register = new RegistryManager(plugin);
+        registry = new RegistryManager(plugin);
         config = new ConfigManager(plugin);
-        events();
+        listeners();
     }
 
-    private void events() {
-        register.event(InventoryClickEvent.class, GUIListener::onClick);
+    private void listeners() {
+        registry.listener(InventoryClickEvent.class, GUIListener::onClick);
     }
 
 }

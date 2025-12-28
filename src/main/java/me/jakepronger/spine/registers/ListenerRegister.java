@@ -8,15 +8,15 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.function.Consumer;
 
-public class EventRegister {
+public class ListenerRegister {
 
     private final JavaPlugin plugin;
 
-    public EventRegister(JavaPlugin plugin) {
+    public ListenerRegister(JavaPlugin plugin) {
         this.plugin = plugin;
     }
 
-    public <T extends Event> void event(
+    public <T extends Event> void listener(
             Class<T> eventClass,
             EventPriority priority,
             boolean ignoreCancelled,

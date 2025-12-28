@@ -1,6 +1,6 @@
 package me.jakepronger.spine.builders;
 
-import me.jakepronger.spine.registers.EventRegister;
+import me.jakepronger.spine.registers.ListenerRegister;
 import org.bukkit.event.Event;
 import org.bukkit.event.EventPriority;
 
@@ -10,9 +10,9 @@ import java.util.function.Consumer;
  * Must use register() to initialize.
  * @param <T> Event class
  */
-public class EventBuilder<T extends Event> {
+public class ListenerBuilder<T extends Event> {
 
-    private final EventRegister register;
+    private final ListenerRegister register;
 
     private final Class<T> type;
     private final Consumer<T> action;
@@ -20,7 +20,7 @@ public class EventBuilder<T extends Event> {
     private EventPriority priority;
     private boolean ignoreCancelled;
 
-    public EventBuilder(EventRegister register, Class<T> type, Consumer<T> action) {
+    public ListenerBuilder(ListenerRegister register, Class<T> type, Consumer<T> action) {
         this.register = register;
         this.type = type;
         this.action = action;
@@ -28,15 +28,15 @@ public class EventBuilder<T extends Event> {
     }
 
     public void register() {
-        register.event(type, priority, ignoreCancelled, action);
+        register.listener(type, priority, ignoreCancelled, action);
     }
 
-    public EventBuilder<T> eventPriority(EventPriority value) {
+    public ListenerBuilder<T> priority(EventPriority value) {
         priority = value;
         return this;
     }
 
-    public EventBuilder<T> ignoreCancelled(boolean value) {
+    public ListenerBuilder<T> ignoreCancelled(boolean value) {
         this.ignoreCancelled = value;
         return this;
     }

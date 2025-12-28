@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "me.jakepronger.spine"
-version = "1.0.9"
+version = "1.1.0"
 
 val artifactId = "Spine"
 val gitGroup = "com.github.jakepronger"
