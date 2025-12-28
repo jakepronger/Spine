@@ -1,8 +1,10 @@
 package me.jakepronger.spine;
 
 import lombok.Getter;
+import me.jakepronger.spine.listeners.GUIListener;
+import me.jakepronger.spine.managers.ConfigManager;
 import me.jakepronger.spine.managers.RegistryManager;
-import me.jakepronger.spine.helpers.LoggerHelper;
+import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Spine {
@@ -13,22 +15,20 @@ public class Spine {
 
     // Tasks? Math? Location
 
-    // Config
-
-    // GUI, Creating, Listeners
-
-    @Getter
-    private static LoggerHelper logger;
-
     @Getter
     private final RegistryManager register;
 
-    private final JavaPlugin plugin;
+    @Getter
+    private final ConfigManager config;
 
     public Spine(JavaPlugin plugin) {
-        this.plugin = plugin;
         register = new RegistryManager(plugin);
-        logger = new LoggerHelper(plugin);
+        config = new ConfigManager(plugin);
+        events();
+    }
+
+    private void events() {
+        register.event(InventoryClickEvent.class, GUIListener::onClick);
     }
 
 }

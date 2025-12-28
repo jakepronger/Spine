@@ -13,68 +13,57 @@ import java.util.function.Consumer;
 
 @Getter
 @Accessors(fluent = true, chain = true)
-public class ItemStackBuilder {
+public class ItemBuilder {
 
     private final ItemStack item;
     private final ItemMeta meta;
 
-    public ItemStackBuilder(Material material) {
+    public ItemBuilder(Material material) {
         this.item = new ItemStack(material);
         this.meta = item.getItemMeta();
     }
 
-    public ItemStackBuilder(Material material, int amount) {
+    public ItemBuilder(Material material, int amount) {
         this.item = new ItemStack(material, amount);
         this.meta = item.getItemMeta();
     }
 
-    public ItemStackBuilder amount(int amount) {
+    public ItemBuilder amount(int amount) {
         item.setAmount(amount);
         return this;
     }
 
-    /**
-     * Generic meta editor
-     * @param consumer
-     * @return
-     */
-    public ItemStackBuilder meta(Consumer<ItemMeta> consumer) {
+    public ItemBuilder meta(Consumer<ItemMeta> consumer) {
         consumer.accept(this.meta); // modifies cached meta
         return this;                // allows fluent chaining
     }
 
-    public ItemStackBuilder name(String name) {
+    public ItemBuilder name(String name) {
         return meta(meta -> {
             meta.displayName(Component.text(name)); // todo formatting
         });
     }
 
-    public ItemStackBuilder lore(String... lore) {
+    public ItemBuilder lore(String... lore) {
         return meta(meta -> {
             // todo: formatting etc proper add
             //meta.lore(Arrays.stream(lore).toList());
         });
     }
 
-    public ItemStackBuilder flags(ItemFlag... flags) {
-        return meta(meta -> {
-            meta.addItemFlags(flags);
-        });
+    public ItemBuilder flags(ItemFlag... flags) {
+        return meta(meta -> meta.addItemFlags(flags));
     }
 
-    public ItemStackBuilder enchant(Enchantment enchantment, int level, boolean ignoreLevelRestriction) {
-        return meta(meta -> {
-            meta.addEnchant(enchantment, level, ignoreLevelRestriction);
-        });
+    public ItemBuilder enchant(Enchantment enchantment, int level) {
+        return meta(meta -> meta.addEnchant(enchantment, level, true));
     }
 
-    public ItemStackBuilder glow() {
-        return meta(meta -> {
-            meta.setEnchantmentGlintOverride(true);
-        });
+    public ItemBuilder glow() {
+        return meta(meta -> meta.setEnchantmentGlintOverride(true));
     }
 
-    public ItemStackBuilder glow(boolean value) {
+    public ItemBuilder glow(boolean value) {
         return meta(meta -> {
             if (value)
                 meta.setEnchantmentGlintOverride(true);
@@ -84,6 +73,7 @@ public class ItemStackBuilder {
     }
 
     public ItemStack build() {
+        item.setItemMeta(meta);
         return item;
     }
 
