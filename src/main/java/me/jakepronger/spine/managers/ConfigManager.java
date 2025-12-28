@@ -14,15 +14,16 @@ public class ConfigManager {
 
     public ConfigManager(JavaPlugin plugin) {
         this.plugin = plugin;
-        this.config = plugin.getConfig();
-        this.load();
+        this.config = load();
     }
 
-    private void load() {
+    public FileConfiguration load() {
         plugin.saveDefaultConfig();
         plugin.reloadConfig();
+        return plugin.getConfig();
     }
 
+    // todo: do we need this?
     public void reload() {
         load();
     }
