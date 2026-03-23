@@ -1,19 +1,24 @@
 package me.jakepronger.spine.api.command;
 
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class CommandContext {
 
-    private final Player player;
+    private final CommandSender sender;
     private final String[] args;
 
-    public CommandContext(Player player, String[] args) {
-        this.player = player;
+    public CommandContext(CommandSender sender, String[] args) {
+        this.sender = sender;
         this.args = args;
     }
 
+    public boolean isPlayer() {
+        return sender instanceof Player;
+    }
+
     public Player player() {
-        return player;
+        return (Player) sender;
     }
 
     public String arg(int i) {

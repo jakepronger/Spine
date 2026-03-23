@@ -1,8 +1,7 @@
-package me.jakepronger.spine.builders;
+package me.jakepronger.spine.api.builders;
 
 import io.papermc.paper.command.brigadier.CommandSourceStack;
 import me.jakepronger.spine.enums.Permission;
-import me.jakepronger.spine.registers.CommandRegister;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

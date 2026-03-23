@@ -1,4 +1,4 @@
-package me.jakepronger.spine.managers;
+package me.jakepronger.spine.api.managers;
 
 import lombok.experimental.Delegate;
 import org.bukkit.configuration.ConfigurationSection;

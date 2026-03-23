@@ -1,10 +1,8 @@
-package me.jakepronger.spine.managers;
+package me.jakepronger.spine.api.managers;
 
 import io.papermc.paper.command.brigadier.CommandSourceStack;
-import me.jakepronger.spine.builders.CommandBuilder;
-import me.jakepronger.spine.builders.ListenerBuilder;
-import me.jakepronger.spine.registers.CommandRegister;
-import me.jakepronger.spine.registers.ListenerRegister;
+import me.jakepronger.spine.api.builders.CommandBuilder;
+import me.jakepronger.spine.api.builders.ListenerBuilder;
 import org.bukkit.event.Event;
 import org.bukkit.plugin.java.JavaPlugin;
 

@@ -1,4 +1,4 @@
-package me.jakepronger.spine.helpers;
+package me.jakepronger.spine.api.helpers;
 
 import net.kyori.adventure.text.format.TextColor;
 

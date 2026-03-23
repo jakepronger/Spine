@@ -1,7 +1,4 @@
-package me.jakepronger.spine.helpers;
-
-import me.jakepronger.spine.Spine;
-import org.bukkit.Bukkit;
+package me.jakepronger.spine.api.helpers;
 
 import java.io.File;
 import java.io.FileInputStream;

@@ -1,6 +1,7 @@
 package me.jakepronger.spine.enums;
 
 import io.papermc.paper.command.brigadier.CommandSourceStack;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public enum Permission {
@@ -16,14 +17,14 @@ public enum Permission {
         this.permissionNode = permissionNode;
     }
 
-    public boolean has(CommandSourceStack source) {
+    public boolean has(CommandSender sender) {
 
         // DEFAULT = no permission required
         if (permissionNode.isEmpty())
             return true;
 
         // Console always allowed
-        if (!(source.getExecutor() instanceof Player player))
+        if (!(sender instanceof Player player))
             return true;
 
         // ADMIN special-case: op OR permission

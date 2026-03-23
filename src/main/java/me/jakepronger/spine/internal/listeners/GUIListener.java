@@ -1,6 +1,6 @@
-package me.jakepronger.spine.listeners;
+package me.jakepronger.spine.internal.listeners;
 
-import me.jakepronger.spine.models.GUIData;
+import me.jakepronger.spine.internal.models.GUIData;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 

@@ -1,6 +1,5 @@
-package me.jakepronger.spine.builders;
+package me.jakepronger.spine.api.builders;
 
-import me.jakepronger.spine.registers.ListenerRegister;
 import org.bukkit.event.Event;
 import org.bukkit.event.EventPriority;
 

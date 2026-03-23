@@ -2,6 +2,7 @@ package me.jakepronger.spine.api;
 
 import me.jakepronger.spine.Spine;
 import me.jakepronger.spine.api.command.CommandExecutor;
+import me.jakepronger.spine.api.builders.CommandBuilder;
 import me.jakepronger.spine.core.FeatureEngine;
 import me.jakepronger.spine.core.command.CommandEngine;
 import me.jakepronger.spine.core.listener.ListenerEngine;
@@ -29,12 +30,12 @@ public class SpineAPI {
     }
 
     // clean shortcuts (THIS is your “feel good API” layer)
-    public void command(String name, CommandExecutor executor) {
-        commands().register(name, executor);
+    public CommandBuilder command(String name, CommandExecutor executor) {
+        commandEngine.create(name, executor);
     }
 
     public void listen(Class<?> event, EventListener listener) {
-        api.events().register(event, listener);
+        listenerEngine.register(event, listener);
     }
 
 }
