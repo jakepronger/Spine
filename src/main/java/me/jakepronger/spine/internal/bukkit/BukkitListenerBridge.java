@@ -9,7 +9,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.util.function.Consumer;
 
 public class BukkitListenerBridge {
-
+/*
     public BukkitListenerBridge(JavaPlugin plugin) {
         this.plugin = plugin;
     }
@@ -29,5 +29,5 @@ public class BukkitListenerBridge {
                 ignoreCancelled
         );
     }
-
+*/
 }

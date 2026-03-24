@@ -8,7 +8,7 @@ import java.util.function.Consumer;
 /**
  * Must use register() to initialize.
  * @param <T> Event class
- */
+ *
 public class ListenerBuilder<T extends Event> {
 
     private final ListenerRegister register;
@@ -40,4 +40,4 @@ public class ListenerBuilder<T extends Event> {
         return this;
     }
 
-}
+}*/

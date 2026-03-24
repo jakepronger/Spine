@@ -30,7 +30,12 @@ public class CommandRegistration {
         return this;
     }
 
+    public CommandRegistration cooldown(int seconds) {
+        def.cooldown = seconds;
+        return this;
+    }
+
     public void register() {
-        engine.register(def);
+        engine.add(this.def);
     }
 }

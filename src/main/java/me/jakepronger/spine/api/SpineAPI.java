@@ -2,9 +2,9 @@ package me.jakepronger.spine.api;
 
 import me.jakepronger.spine.Spine;
 import me.jakepronger.spine.api.command.CommandExecutor;
-import me.jakepronger.spine.api.builders.CommandBuilder;
 import me.jakepronger.spine.core.FeatureEngine;
 import me.jakepronger.spine.core.command.CommandEngine;
+import me.jakepronger.spine.core.command.CommandRegistration;
 import me.jakepronger.spine.core.listener.ListenerEngine;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -15,14 +15,11 @@ public class SpineAPI {
     private final Spine spine;
 
     private final CommandEngine commandEngine;
-    private final ListenerEngine listenerEngine;
-    private final FeatureEngine featureEngine;
 
     public SpineAPI(Spine spine) {
         this.spine = spine;
-        this.commandEngine = new CommandEngine(spine);
-        this.listenerEngine = new ListenerEngine(spine);
-        this.featureEngine = new FeatureEngine(spine);
+        this.commandEngine = new CommandEngine(spine.plugin());
+        //this.listenerEngine = new ListenerEngine(spine);
     }
 
     public JavaPlugin plugin() {
@@ -30,12 +27,14 @@ public class SpineAPI {
     }
 
     // clean shortcuts (THIS is your “feel good API” layer)
-    public CommandBuilder command(String name, CommandExecutor executor) {
-        commandEngine.create(name, executor);
+    public CommandRegistration command(String name, CommandExecutor executor) {
+        return new CommandRegistration(commandEngine, name, executor);
     }
 
+    /*
     public void listen(Class<?> event, EventListener listener) {
         listenerEngine.register(event, listener);
     }
+     */
 
 }
