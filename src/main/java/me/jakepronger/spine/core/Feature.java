@@ -1,7 +1,7 @@
 package me.jakepronger.spine.core;
 
-import me.jakepronger.spine.Spine;
+import me.jakepronger.spine.api.SpineAPI;
 
 public interface Feature {
-    void load(Spine spine);
+    void load(SpineAPI api);
 }
