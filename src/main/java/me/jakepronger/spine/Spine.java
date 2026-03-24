@@ -13,8 +13,8 @@ public class Spine {
 
     public Spine(JavaPlugin plugin) {
         this.plugin = plugin;
-        this.featureEngine = new FeatureEngine(this);
         this.api = new SpineAPI(this);
+        this.featureEngine = new FeatureEngine(api);
     }
 
     public JavaPlugin plugin() {
