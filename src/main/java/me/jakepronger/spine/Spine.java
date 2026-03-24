@@ -11,7 +11,7 @@ public class Spine {
     private final FeatureEngine featureEngine; // todo: not sure if this should be here or SpineAPI
     private final SpineAPI api;
 
-    private Spine(JavaPlugin plugin) {
+    public Spine(JavaPlugin plugin) {
         this.plugin = plugin;
         this.featureEngine = new FeatureEngine(this);
         this.api = new SpineAPI(this);
