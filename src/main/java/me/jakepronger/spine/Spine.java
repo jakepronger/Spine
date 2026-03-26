@@ -1,8 +1,8 @@
 package me.jakepronger.spine;
 
 import me.jakepronger.spine.api.SpineAPI;
-import me.jakepronger.spine.core.Feature;
-import me.jakepronger.spine.core.FeatureEngine;
+import me.jakepronger.spine.api.contract.Feature;
+import me.jakepronger.spine.core.engines.FeatureEngine;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Spine {

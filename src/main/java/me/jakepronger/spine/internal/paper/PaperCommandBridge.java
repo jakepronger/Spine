@@ -6,7 +6,7 @@ import io.papermc.paper.command.brigadier.Commands;
 import io.papermc.paper.plugin.lifecycle.event.types.LifecycleEvents;
 import me.jakepronger.spine.api.command.CommandContext;
 import me.jakepronger.spine.core.command.CommandDefinition;
-import me.jakepronger.spine.core.command.CommandEngine;
+import me.jakepronger.spine.core.engines.CommandEngine;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class PaperCommandBridge {

@@ -1,5 +1,6 @@
-package me.jakepronger.spine.core.command;
+package me.jakepronger.spine.core.engines;
 
+import me.jakepronger.spine.core.command.CommandDefinition;
 import me.jakepronger.spine.internal.paper.PaperCommandBridge;
 import org.bukkit.plugin.java.JavaPlugin;
 

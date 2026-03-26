@@ -1,4 +1,4 @@
-package me.jakepronger.spine.api.builders;
+package me.jakepronger.spine.api.builder;
 
 import lombok.Getter;
 import lombok.experimental.Accessors;

@@ -1,4 +1,4 @@
-package me.jakepronger.spine.core;
+package me.jakepronger.spine.api.contract;
 
 import me.jakepronger.spine.api.SpineAPI;
 

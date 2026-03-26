@@ -1,6 +1,7 @@
-package me.jakepronger.spine.core;
+package me.jakepronger.spine.core.engines;
 
 import me.jakepronger.spine.api.SpineAPI;
+import me.jakepronger.spine.api.contract.Feature;
 
 import java.lang.reflect.Constructor;
 

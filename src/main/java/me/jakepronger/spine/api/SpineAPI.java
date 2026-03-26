@@ -1,14 +1,10 @@
 package me.jakepronger.spine.api;
 
 import me.jakepronger.spine.Spine;
-import me.jakepronger.spine.api.command.CommandExecutor;
-import me.jakepronger.spine.core.FeatureEngine;
-import me.jakepronger.spine.core.command.CommandEngine;
+import me.jakepronger.spine.api.contract.CommandExecutor;
+import me.jakepronger.spine.core.engines.CommandEngine;
 import me.jakepronger.spine.core.command.CommandRegistration;
-import me.jakepronger.spine.core.listener.ListenerEngine;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import java.util.EventListener;
 
 public class SpineAPI {
 
@@ -26,7 +22,6 @@ public class SpineAPI {
         return spine.plugin();
     }
 
-    // clean shortcuts (THIS is your “feel good API” layer)
     public CommandRegistration command(String name, CommandExecutor executor) {
         return new CommandRegistration(commandEngine, name, executor);
     }

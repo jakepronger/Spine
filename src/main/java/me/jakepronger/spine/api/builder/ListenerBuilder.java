@@ -1,9 +1,4 @@
-package me.jakepronger.spine.api.builders;
-
-import org.bukkit.event.Event;
-import org.bukkit.event.EventPriority;
-
-import java.util.function.Consumer;
+package me.jakepronger.spine.api.builder;
 
 /**
  * Must use register() to initialize.

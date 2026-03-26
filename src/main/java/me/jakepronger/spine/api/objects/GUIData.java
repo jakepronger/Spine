@@ -1,4 +1,4 @@
-package me.jakepronger.spine.internal.models;
+package me.jakepronger.spine.api.objects;
 
 import lombok.Getter;
 import lombok.Setter;

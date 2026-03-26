@@ -1,7 +1,8 @@
 package me.jakepronger.spine.core.command;
 
-import me.jakepronger.spine.api.command.CommandExecutor;
+import me.jakepronger.spine.api.contract.CommandExecutor;
 import me.jakepronger.spine.enums.Permission;
+import me.jakepronger.spine.core.engines.CommandEngine;
 
 import java.util.Arrays;
 
